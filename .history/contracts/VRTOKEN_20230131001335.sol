@@ -1,4 +1,5 @@
 //SPDX // SPDX-License-Identifier: GPL-3.0
+
 pragma solidity 0.8.5;
 
 contract VRToken {
@@ -15,3 +16,6 @@ contract VRToken {
         return tokens[tokenId];
     }
 }
+
+
+// it displays the hash of the VR attributes
