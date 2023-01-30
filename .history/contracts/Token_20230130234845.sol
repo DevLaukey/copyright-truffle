@@ -13,7 +13,7 @@ contract Token {
 }
 
 contract TokenComparator {
-    function areTokensEqual(address token1, address token2) public  returns (bool) {
+    function areTokensEqual(address token1, address token2) public view returns (bool) {
         Token  t1 = Token(token1);
         Token  t2 = Token(token2);
 
@@ -24,7 +24,7 @@ contract TokenComparator {
 contract Example {
     TokenComparator comparator = new TokenComparator();
 
-    function createAndCompareTokens() public  returns (bool) {
+    function createAndCompareTokens() public view returns (bool) {
         Token token1 = new Token("Token 1", "T1", 100);
         Token token2 = new Token("Token 2", "T2", 200);
 
