@@ -13,7 +13,7 @@ contract Token {
 }
 
 contract TokenComparator {
-    function areTokensEqual(Token  token1, Token  token2) public view returns (bool) {
+    function areTokensEqual(Token memory token1, Token memory token2) public view returns (bool) {
         return token1.nameHash == token2.nameHash && token1.symbolHash == token2.symbolHash && token1.totalSupply == token2.totalSupply;
     }
 }
@@ -21,9 +21,9 @@ contract TokenComparator {
 contract Example {
     TokenComparator comparator = new TokenComparator();
 
-    function createAndCompareTokens() public  returns (bool) {
-        Token  token1 = new Token("Token 1", "T1", 100);
-        Token  token2 = new Token("Token 2", "T2", 200);
+    function createAndCompareTokens() public view returns (bool) {
+        Token memory token1 = new Token("Token 1", "T1", 100);
+        Token memory token2 = new Token("Token 2", "T2", 200);
 
         return comparator.areTokensEqual(token1, token2);
     }

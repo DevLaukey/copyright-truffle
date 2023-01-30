@@ -58,6 +58,7 @@ contract Token {
     }
 }
 
+
 contract Copyright {
     // Events
     event NewAsset( 
