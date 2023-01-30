@@ -26,8 +26,8 @@ contract VRToken  {
 
    function compareVRAssets(address _asset1, address _asset2) public view returns (bool) {
         // Compare the VR assets' hashes
-        bytes32 hash1 = "1" ;
-        bytes32 hash2 = "2" ;
+        bytes32 hash1 = VRAsset(_asset1).getHash();
+        bytes32 hash2 = VRAsset(_asset2).getHash();
         if (hash1 == hash2) {
             return true;
         } else {
